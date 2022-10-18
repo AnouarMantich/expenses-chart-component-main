@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    :root{
+      --Soft-red: hsl(10, 79%, 65%);
+      --Cyan: hsl(186, 34%, 60%);
+      --Dark-brown: hsl(25, 47%, 15%);
+      --Medium-brown: hsl(28, 10%, 53%);
+      --Cream: hsl(27, 66%, 92%);
+      --Very-pale-orange: hsl(33, 100%, 98%);
+    }
+
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    body{
+      height: 100vh;
+      width: 100vw;
+      background-color: var(--Cream);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container{
+      height: auto;
+      width: 500px
+    }
+
+    .top{
+      height: 90px;
+      padding: 20px;
+      background: var(--Soft-red);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--Very-pale-orange);
+    }
+    .top img{
+      width: 50px;
+    }
+    .bottom{
+      height: 400px;
+      background-color: var(--Very-pale-orange);
+      border-radius: 10px;
+      padding: 30px;
+    }
+
+    .balance p{
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+    .stats{
+      height: 200px;
+      display: flex;
+    }
+    .day{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      color: var(--Medium-brown);
+    }
+
+    .candal{
+      cursor: pointer;
+      width: 44px;
+      height: 100px;
+      margin-right: 20px;
+      border-radius: 5px;
+      background: var(--Soft-red);
+    }
+    .price-tag{
+      padding: 5px;
+      height: 30px;
+      width: 100%;
+      background-color: black;
+      color: var(--Very-pale-orange);
+      border-radius: 5px;
+      margin-bottom: 5px;
+      margin-left: -20px;
+      
+    }
+    .day-name{
+      margin-left: -20px;
+    }
+
+    .line{
+      height: 2px;
+      width: 100%;
+      background-color: var(--Medium-brown);
+      margin-top: 20px;
+      border-radius: 50px;
+    }
+    .bottom p{
+      color: var(--Medium-brown);
+      margin-top: 20px;
+    }
+    .total-info{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .percent{
+      text-align: end;
+    }
+    .percent div:last-of-type{
+      color: var(--Medium-brown);
+    }
+
+    @media screen and (max-width:510px) {
+
+      .container{
+      height: auto;
+      width: 95%
+    }
+    .candal{
+      width: 34px;
+    }
+
+    .bottom{
+
+      padding: 15px;
+    }
+
+
+    }
+    @media screen and (max-width:394px) {
+
+
+.candal{
+width: 27px;
+}
+
+.bottom{
+
+padding: 15px;
+}
+
+
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top">
+      <div class="balance">
+        <p>My balance</p>
+        <h3 class="myBalance">$921.48</h3>
+      </div>
+      <img src="./images/logo.svg" alt="">
+    </div>
+    <div class="bottom">
+      <h3>Spending - Last 7 days</h3>
+      <div class="stats">
+        <div class="day">
+          <div class="price-tag" hidden>&dollar;34.34</div>
+          <div class="candal"></div>
+          <div class="day-name"> mon</div>
+        </div>
+        <div class="day">
+          <div class="price-tag" hidden>&dollar; 44.34</div>
+          <div class="candal"></div>
+          <div class="day-name"> tue</div>
+        </div>
+        <div class="day">
+          <div class="price-tag" hidden>&dollar; 54.34</div>
+          <div class="candal"></div>
+          <div class="day-name"> wed</div>
+        </div>
+        <div class="day">
+          <div class="price-tag" hidden>&dollar; 64.34</div>
+          <div class="candal"></div>
+          <div class="day-name"> thu</div>
+        </div>
+        <div class="day">
+          <div class="price-tag" hidden>&dollar; 74.34</div>
+          <div class="candal"></div>
+          <div class="day-name"> fri</div>
+        </div>
+        <div class="day">
+          <div class="price-tag" hidden>&dollar; 84.34</div>
+          <div class="candal"></div>
+          <div class="day-name"> sat</div>
+        </div>
+        <div class="day">
+          <div class="price-tag" hidden>&dollar; 94.34</div>
+          <div class="candal"></div>
+          <div class="day-name"> sun</div>
+        </div>
+      </div>
+
+      <div class="line"></div>
+      <p>Total this month</p>
+
+      <div class="total-info">
+        <h1 class="total">$478.33</h1>
+        <div class="percent">
+           <div>+2.4%</div>
+           <div>from last month</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="./script.js"></script>
+</body>
+</html>
